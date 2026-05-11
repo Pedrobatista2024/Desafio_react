@@ -1,5 +1,5 @@
-import { ImageBackground, StyleSheet, Text, View, TextInput } from "react-native";
-
+import { ImageBackground,TouchableOpacity, StyleSheet, Text, View, TextInput } from "react-native";
+import { Link } from "expo-router";
 export default function Index() {
   return (
     <ImageBackground
@@ -26,6 +26,26 @@ export default function Index() {
             placeholderTextColor={"#ccc"}
             secureTextEntry={true}
           />
+
+          <TouchableOpacity style={styles.button} activeOpacity={0.8}>
+            <Text style={styles.buttonText}>ENTRAR</Text>
+          </TouchableOpacity>
+
+          <View style={styles.linkContainer}>
+            
+            {/* Link 1: Recuperar Senha */}
+            <Link href="/recuperar-senha" style={styles.link}>
+              Esqueceu a senha?
+            </Link>
+
+            {/* Link 2: Criar Conta */}
+            <Link href="/criar-conta" style={styles.linkBold}>
+              Criar uma conta
+            </Link>
+
+          </View>
+
+          
         </View>
       </View>
     </ImageBackground>
@@ -74,4 +94,42 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "rgba(255, 255, 255, 0.4)", // Bordinha fina e semi-transparente
   },
+button: {
+    width: "100%", // Ocupa a largura total da caixa 'form'
+    height: 50, // Mesma altura dos inputs para manter a harmonia
+    backgroundColor: "#007BFF", // Cor azul padrão (você pode trocar por qualquer hexadecimal)
+    borderRadius: 8, // Cantos arredondados iguais aos dos inputs
+    justifyContent: "center", // Centraliza o texto do botão verticalmente
+    alignItems: "center", // Centraliza o texto do botão horizontalmente
+    marginTop: 10, // Dá um espaço do input de senha
+    // Sombra para dar profundidade (opcional)
+    elevation: 3, // Sombra para Android
+    shadowColor: "#000", // Sombra para iOS/Web
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  // 3. ADICIONADO: Estilo do texto dentro do Botão
+  buttonText: {
+    color: "#fff", // Letra branca
+    fontSize: 18,
+    fontWeight: "bold", // Letra em negrito
+  },
+  linkContainer: {
+    flexDirection: "row", // Coloca os links lado a lado
+    justifyContent: "space-between", // Empurra um link para a esquerda e o outro para a direita
+    width: "100%", // Ocupa a largura total do formulário
+    marginTop: 20, // Dá distância do botão "Entrar"
+  },
+  link: {
+    color: "#ccc", // Cinza claro para não brigar com o botão principal
+    fontSize: 14,
+    textDecorationLine: "underline", // Deixa o texto sublinhado, indicando que é clicável
+  },
+  linkBold: {
+    color: "#fff", // Branco para dar um destaque extra no "Criar Conta"
+    fontSize: 14,
+    fontWeight: "bold",
+    textDecorationLine: "underline",
+  }
 });
