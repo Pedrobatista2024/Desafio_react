@@ -6,12 +6,11 @@ export default function Index() {
       source={require("../assets/images/fundol.png")}
       resizeMode="cover"
       style={styles.background}
-    >
+   >
       <View style={styles.container}>
-
         <View style={styles.form}>
+          <Text style={styles.brandTitle}>MAIS HORAS</Text>
           <Text style={styles.title}>Área de Acesso</Text>
-
           <TextInput
             style={styles.input}
             placeholder="Digite seu e-mail"
@@ -19,33 +18,23 @@ export default function Index() {
             keyboardType="email-address"
             autoCapitalize="none"
           />
-
           <TextInput
             style={styles.input}
             placeholder="Digite sua senha"
             placeholderTextColor={"#ccc"}
             secureTextEntry={true}
           />
-
           <TouchableOpacity style={styles.button} activeOpacity={0.8}>
             <Text style={styles.buttonText}>ENTRAR</Text>
           </TouchableOpacity>
-
           <View style={styles.linkContainer}>
-            
-            {/* Link 1: Recuperar Senha */}
             <Link href="/recuperar-senha" style={styles.link}>
-              Esqueceu a senha?
+            Esqueceu a senha?
             </Link>
-
-            {/* Link 2: Criar Conta */}
             <Link href="/criar-conta" style={styles.linkBold}>
-              Criar uma conta
+            Criar uma conta
             </Link>
-
           </View>
-
-          
         </View>
       </View>
     </ImageBackground>
@@ -83,53 +72,67 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   input: {
-    width: "100%", // Ocupa toda a largura disponível (respeitando o padding do container)
-    height: 50, // Altura confortável para o dedo tocar no celular
-    backgroundColor: "rgba(255, 255, 255, 0.2)", // Fundo branco bem transparente (estilo moderno)
-    borderRadius: 8, // Arredonda os cantos
-    paddingHorizontal: 15, // Dá espaço para o texto não começar colado na borda esquerda
-    color: "#fff", // Cor do texto que o usuário digita
+    width: "100%", 
+    height: 50, 
+    backgroundColor: "rgba(255, 255, 255, 0.2)",
+    borderRadius: 8, 
+    paddingHorizontal: 15, 
+    color: "#fff", 
     fontSize: 16,
-    marginBottom: 15, // Espaço entre o primeiro input e o segundo
+    marginBottom: 15, 
     borderWidth: 1,
-    borderColor: "rgba(255, 255, 255, 0.4)", // Bordinha fina e semi-transparente
+    borderColor: "rgba(255, 255, 255, 0.4)", 
   },
 button: {
-    width: "100%", // Ocupa a largura total da caixa 'form'
-    height: 50, // Mesma altura dos inputs para manter a harmonia
-    backgroundColor: "#007BFF", // Cor azul padrão (você pode trocar por qualquer hexadecimal)
-    borderRadius: 8, // Cantos arredondados iguais aos dos inputs
-    justifyContent: "center", // Centraliza o texto do botão verticalmente
-    alignItems: "center", // Centraliza o texto do botão horizontalmente
-    marginTop: 10, // Dá um espaço do input de senha
-    // Sombra para dar profundidade (opcional)
-    elevation: 3, // Sombra para Android
-    shadowColor: "#000", // Sombra para iOS/Web
+    width: "100%", 
+    height: 50, 
+    backgroundColor: "#007BFF",
+    borderRadius: 8, 
+    justifyContent: "center", 
+    alignItems: "center", 
+    marginTop: 10, 
+    elevation: 3,
+    shadowColor: "#000", 
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
   },
-  // 3. ADICIONADO: Estilo do texto dentro do Botão
+
   buttonText: {
-    color: "#fff", // Letra branca
+    color: "#fff", 
     fontSize: 18,
-    fontWeight: "bold", // Letra em negrito
+    fontWeight: "bold", 
   },
   linkContainer: {
-    flexDirection: "row", // Coloca os links lado a lado
-    justifyContent: "space-between", // Empurra um link para a esquerda e o outro para a direita
-    width: "100%", // Ocupa a largura total do formulário
-    marginTop: 20, // Dá distância do botão "Entrar"
+    flexDirection: "row", 
+    justifyContent: "space-between", 
+    width: "100%", 
+    marginTop: 20, 
   },
   link: {
-    color: "#ccc", // Cinza claro para não brigar com o botão principal
+    color: "#ccc", 
     fontSize: 14,
-    textDecorationLine: "underline", // Deixa o texto sublinhado, indicando que é clicável
+    textDecorationLine: "underline", 
   },
   linkBold: {
-    color: "#fff", // Branco para dar um destaque extra no "Criar Conta"
+    color: "#fff", 
     fontSize: 14,
     fontWeight: "bold",
     textDecorationLine: "underline",
-  }
+  },
+
+  brandTitle: {
+    color: "#fff",
+    fontSize: 42, 
+    fontWeight: "900",
+    letterSpacing: 2, 
+    textAlign: "center",
+  },
+  subtitle: {
+    color: "#aaa", 
+    fontSize: 16,
+    fontWeight: "500",
+    marginBottom: 40, 
+    textAlign: "center",
+  },
 });
